@@ -1,26 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Sample Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sanjeev Yadav | DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #fff;
+}
+
+/* Animated background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1), transparent),
+                radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1), transparent);
+    animation: moveBg 15s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    100% { transform: translate(-50px,-50px); }
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+nav h1 {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #00c6ff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero span {
+    color: #00c6ff;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.8;
+    max-width: 700px;
+    margin: auto;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 14px 35px;
+    border-radius: 30px;
+    border: none;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 114, 255, 0.6);
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(0,198,255,0.2);
+}
+
+.skill-card h4 {
+    margin-top: 10px;
+}
+
+.footer {
+    margin-top: 80px;
+    text-align: center;
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+@media(max-width:768px) {
+    .hero h2 { font-size: 32px; }
+    nav ul { display: none; }
+}
+</style>
 </head>
+
 <body>
-    <header><h1>Your Name</h1></header>
-    <nav><a href="#about">About</a> | <a href="#projects">Projects</a> | <a href="#contact">Contact</a></nav>
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Passionate developer creating simple web layouts.</p>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Example: Tribute Page</p>
-            <p>Example: E-commerce Layout</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>GitHub: <a href="https://github.com" target="_blank">Username</a></p>
-        </section>
-    </main>
+
+<div class="container">
+
+<nav>
+    <h1>Sanjeev Yadav</h1>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Hello, I'm <span>DevOps Engineer</span></h2>
+    <p>
+        Infrastructure & Middleware Specialist with expertise in AWS Cloud,
+        Docker, WebSphere, IBM Liberty, Jenkins, Ansible & Nginx.
+        Passionate about automation, CI/CD pipelines and scalable architecture.
+    </p>
+    <button class="btn">Download Resume</button>
+</section>
+
+<section>
+    <h3 class="section-title">Core Skills</h3>
+    <div class="skills">
+        <div class="skill-card"><h4>AWS Cloud</h4></div>
+        <div class="skill-card"><h4>Docker</h4></div>
+        <div class="skill-card"><h4>Kubernetes</h4></div>
+        <div class="skill-card"><h4>WebSphere</h4></div>
+        <div class="skill-card"><h4>IBM Liberty</h4></div>
+        <div class="skill-card"><h4>Jenkins</h4></div>
+        <div class="skill-card"><h4>Ansible</h4></div>
+        <div class="skill-card"><h4>Nginx</h4></div>
+    </div>
+</section>
+
+<div class="footer">
+    © 2026 Sanjeev Yadav | DevOps Engineer | Pune, India
+</div>
+
+</div>
+
 </body>
 </html>
